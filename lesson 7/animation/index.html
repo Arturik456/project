@@ -5,11 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <button class="btn">Старт</button>
-    <div class="box"></div>
-    <script src="js/script.js"></script>
+	<div class="box">
+		<button onclick="start_animation()">Стартуем</button>
+		<button onclick="cancel_animation()">Отменяем</button>
+		<div id="box" style="height: 20px; width: 20px; background-color: red"></div>
+	</div>
 </body>
+<script>
+	let height = 20,
+	    width = 20,
+	    id = null
+
+	function animation() {
+	    height++;
+	    width++;
+	    var element = document.getElementById("box");
+	    element.style.height = height + "px";
+	    element.style.width = width + "px";
+
+	    console.log(element.style.height);
+	    id = requestAnimationFrame(animation);
+	}
+
+	function start_animation() {
+	    id = requestAnimationFrame(animation);
+	}
+
+	function cancel_animation() {
+	    cancelAnimationFrame(id);
+	}
+</script>
 </html>
