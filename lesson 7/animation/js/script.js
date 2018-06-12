@@ -11,7 +11,7 @@ function myAnimation() {
             } else {
                 pos++;
                 box.style.left = pos + 'px';
-                box.style.top = Math.pow(2, 10 * (timeFraction - 1)) * Math.cos(20 * Math.PI * x / 3 * timeFraction);
+                box.style.top = Math.floor(Math.random() * (5 + 20)) + 'px';
             }
         }
 }
