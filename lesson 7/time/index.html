@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Таймер</title>
+<script type="text/javascript">
+  function startTimer() {
+    let my_timer = document.getElementById("timer"),
+    	time = my_timer.innerHTML,
+    	arr = time.split(":"),
+   		h = arr[0],
+    	m = arr[1],
+    	s = arr[2]
+
+    if (s == 0) {
+      if (m == 0) {
+        if (h == 0) {
+          alert("Время вышло");
+          window.location.reload();
+          return;
+        }
+        h--;
+        m = 60;
+        if (h < 10) h = "0" + h;
+      }
+      m--;
+      if (m < 10) m = "0" + m;
+      s = 59;
+    }
+    else s--;
+    if (s < 10) s = "0" + s;
+    document.getElementById("timer").innerHTML = h+":"+m+":"+s;
+    setTimeout(startTimer, 1000);
+  }
+</script>
+</head>
+<body onload="startTimer()">
+	<p><span id="timer" style="color: black; font-size: 150%; font-weight: bold;">14:26:50</span></p>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+.box {
+	left: 8px;
+    top: 25px;
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background: red;
+	border-radius: 50px;
+}
+.btn {
+    left: -32px;
+    top: 120px;
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 40px;
+    background-color: red;
+    margin-left: 60px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 20px;
+}
