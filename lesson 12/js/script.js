@@ -290,7 +290,7 @@ let form = document.getElementsByClassName('main-form')[0],
 			persons.addEventListener('change', function() {
 				personsSun = +this.value;
 				total = (daysSum + personsSun)*4000;
-				if (restDays.value == '') {
+				if (persons.value == '') {
 					totalValue.innerHTML = 0;
 				} else if (restDays.value = '') {
 					totalValue.innerHTML = 0;
@@ -306,9 +306,9 @@ let form = document.getElementsByClassName('main-form')[0],
 			restDays.addEventListener('change', function() {
 				daysSum = +this.value;
 				total = (daysSum + personsSun)*4000;
-				if (persons.value == '') {
+				if (restDays.value == '') {
 					totalValue.innerHTML = 0;
-				} else if (persons.value = '') {
+				} else if (persons.value == '') {
 					totalValue.innerHTML = 0;
 				} else {
 					totalValue.innerHTML = total;
