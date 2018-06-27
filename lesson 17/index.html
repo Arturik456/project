@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body>
+	<div class="tabs">
+		  <ul class="tabs__caption">
+		    <li class="active">1-я вкладка</li>
+		    <li>2-я вкладка</li>
+		    <li>3-я вкладка</li>
+		  </ul>
+
+		  <div class="tabs__content active">
+		    <div class="galleria">
+	            <img src="img/photo1.jpg">
+	            <img src="img/photo2.jpg">
+	            <img src="img/photo3.jpg">
+      		</div>
+		  </div>
+
+		  <div class="tabs__content">
+		        <div class="init">
+        			<div class="center1">
+			            <h1>МЫ НУЖДАЕМСЯ В ВАС!</h1>
+			            <p>Нажмите на каждый квадрат, чтобы посадить дерево. Вы должны спешить или фабрики будут колонизировать нас!</p>
+			            <p class="floating bold">Начать игру!</p>
+        			</div>
+    			</div>
+    
+			    <div class="won">
+			        <div class="center">
+			            <h1>ТЫ ПОБЕДИЛ!</h1>
+			            <p class="floating replay bold">Спаситель мира!</p>
+			        </div>
+			    </div>
+			    <div class="init hidden"><h1 class="center">Повышай скорость!</h1></div>
+			   <!-- <h2 class="counter">Level: 1</h2> -->
+			    <div class="container">
+			        <div class="game"></div>
+			    </div>  
+		  </div>
+
+		<div class="tabs__content">
+            <form class="board">
+                <div class="boxes">
+                  <input class="x" id="x-1" type="checkbox" />
+                  <input class="x" id="x-2" type="checkbox" />
+                  <input class="x" id="x-3" type="checkbox" />
+                  <input class="x" id="x-4" type="checkbox" />
+                  <input class="x" id="x-5" type="checkbox" />
+                  <input class="x" id="x-6" type="checkbox" />
+                  <input class="x" id="x-7" type="checkbox" />
+                  <input class="x" id="x-8" type="checkbox" />
+                  <input class="x" id="x-9" type="checkbox" /><input class="o" id="o-1" type="checkbox" /><input class="o" id="o-2" type="checkbox" /><input class="o" id="o-3" type="checkbox" /><input class="o" id="o-4" type="checkbox" /><input class="o" id="o-5" type="checkbox" /><input class="o" id="o-6" type="checkbox" /><input class="o" id="o-7" type="checkbox" /><input class="o" id="o-8" type="checkbox" /><input class="o" id="o-9" type="checkbox" />
+                  <div class="controls">
+                    <div class="control -x">
+                      <div class="control-labels">
+                        <label class="x" for="x-1"></label>
+                        <label class="x" for="x-2"></label>
+                        <label class="x" for="x-3"></label>
+                        <label class="x" for="x-4"></label>
+                        <label class="x" for="x-5"></label>
+                        <label class="x" for="x-6"></label>
+                        <label class="x" for="x-7"></label>
+                        <label class="x" for="x-8"></label>
+                        <label class="x" for="x-9"></label>
+                      </div>
+                    </div>
+                    <div class="control -o">
+                      <div class="control-labels">
+                        <label class="o" for="o-1"></label>
+                        <label class="o" for="o-2"></label>
+                        <label class="o" for="o-3"></label>
+                        <label class="o" for="o-4"></label>
+                        <label class="o" for="o-5"></label>
+                        <label class="o" for="o-6"></label>
+                        <label class="o" for="o-7"></label>
+                        <label class="o" for="o-8"></label>
+                        <label class="o" for="o-9"></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="done">
+                    <div class="lead">
+                      Winner is
+                    </div>
+                    <div class="winner"></div>
+                    <input type="submit" value="Again" />
+                  </div>
+                  <div class="tie">
+                    <span>It's a tie</span><input type="submit" value="Again" />
+                  </div>
+                  <div class="turn">
+                    <div class="turn-x"></div>
+                    <div class="turn-o"></div>
+                  </div>
+                </div>
+
+              </form>
+
+	</div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.5.7/galleria.min.js"></script>
+	<script>
+		(function() { 
+		    Galleria.loadTheme('galleria/themes/classic/galleria.classic.min.js');
+		    Galleria.configure({
+			    transition: 'flash',
+			    imageCrop: true,
+			    height: 400,
+			    width: 500,
+			    autoplay: 3000,
+			    lightbox: true
+			});
+		    Galleria.run('.galleria');
+		}());
+	</script>
+	<script>
+		(function($) {
+		$(function() {
+
+		  $('ul.tabs__caption').on('click', 'li:not(.active)', function() {
+		    $(this)
+		      .addClass('active').siblings().removeClass('active')
+		      .closest('div.tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
+		  });
+
+		});
+		})(jQuery);
+	</script>
+<script src="js/script.js"></script>
+</body>
+</html>
