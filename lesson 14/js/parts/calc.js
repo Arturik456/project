@@ -9,10 +9,10 @@ for(let i = 0; i < inputCulc.length; i++){
 
 					var chr = getChar(e);
 					if (chr == null) return;
-
-					if (chr < '1' || chr > '9') {
+					if (chr < '0' || chr > '9') {
 						return false;
 					}
+
 				}
 		}
 		function getChar(event) {
@@ -48,10 +48,10 @@ for(let i = 0; i < inputCulc.length; i++){
 					 this.value = this.value.replace(/[^0-9]/,"");
 					 personeSum = +this.value;
 						total = (daysSum + personeSum)*4000; 
-						if(persons.value == '' || restDay.value == ''){
+						if(persons.value == '' || restDay.value == '' || persons.value == '0' || restDay.value == '0'){
 							totalValue.innerHTML = 0;
 						} else {
-							totalValue.innerHTML = total;
+							totalValue.innerHTML = total * place.value;
 						}                
 			 });
 
@@ -59,15 +59,15 @@ for(let i = 0; i < inputCulc.length; i++){
 					 this.value = this.value.replace(/[^0-9]/,"");
 					 daysSum = +this.value;
 					 total = (daysSum + personeSum)*4000;
-					 if(persons.value == '' || restDay.value == ''){
+					 if(persons.value == '' || restDay.value == '' || persons.value == '0' || restDay.value == '0'){
 						totalValue.innerHTML = 0;
 					 } else {
-						totalValue.innerHTML = total;
+						totalValue.innerHTML = total * place.value;
 					 }
 			 });
 			
 			place.addEventListener('change', function (){
-				if(persons.value == '' || restDay.value == ''){
+				if(persons.value == '' || restDay.value == '' || persons.value == '0' || restDay.value == '0'){
 					totalValue.innerHTML = 0;
 				} else {
 					let a = total;          
